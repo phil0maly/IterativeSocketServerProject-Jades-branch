@@ -3,11 +3,27 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
+
+        // Prompt for IP Address
         System.out.println("Please Enter IP Address: ");
         String ipAddress = in.nextLine();
+        boolean valid = ipAddress.matches("((25[0-5]|2[0-4]\\d|1\\d{2}|[1-9]?\\d)\\.){3}" +
+                "(25[0-5]|2[0-4]\\d|1\\d{2}|[1-9]?\\d)");
+        while(!valid){
+            System.out.println("Enter proper IP Address. (Format: xxx.xxx.xxx.xxx)");
+            ipAddress = in.nextLine();
+            valid = ipAddress.matches("((25[0-5]|2[0-4]\\d|1\\d{2}|[1-9]?\\d)\\.){3}" +
+                    "(25[0-5]|2[0-4]\\d|1\\d{2}|[1-9]?\\d)");
+        }
+
         System.out.print("Please Enter Port: ");
         Integer port = in.nextInt();
         System.out.println();
+        System.out.println("Please Enter Number of Requests (1, 5, 10, 15, or 25)");
+        Integer numOfRequests = in.nextInt();
+        for (int i = 0; i < numOfRequests; i++) {
+            System.out.println(i);
+        }
         System.out.println("Please Enter Number Corresponding to Desired Command");
         System.out.println("1 - Date and Time");
         System.out.println("2 - Uptime");
@@ -20,9 +36,6 @@ public class Main {
         int requestSelection = in.nextInt();
         ClientCommand request = new ClientCommand(requestSelection);
         ClientCommand returned;
-
-        System.out.println("Please Enter Number of Requests (1, 5, 10, 15, or 25)");
-        Integer numOfRequests = in.nextInt();
 
         switch (requestSelection) {
             case 1:
