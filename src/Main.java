@@ -48,7 +48,8 @@ public class Main {
                 for(int i = 0; i < numOfRequests; i++) {
                     System.out.println(request.dateTime());
                 }
-               break;
+                System.out.println("Completed Date and Time Request");
+                break;
 
             // Uptime
             case 2:
@@ -58,6 +59,7 @@ public class Main {
                 for(int i = 0; i < numOfRequests; i++) {
                     System.out.println(request.upTime());
                 }
+                System.out.println("Completed Uptime Request");
                 break;
 
             // Memory Use
@@ -68,6 +70,7 @@ public class Main {
                 for(int i = 0; i < numOfRequests; i++) {
                     System.out.println(request.memUse());
                 }
+                System.out.println("Completed Memory Use Request");
                 break;
 
             // Netstat
@@ -78,6 +81,7 @@ public class Main {
                 for(int i = 0; i < numOfRequests; i++) {
                     System.out.println(request.netStat());
                 }
+                System.out.println("Completed Netstat Request");
                 break;
 
             // Current Users
@@ -88,6 +92,7 @@ public class Main {
                 for(int i = 0; i < numOfRequests; i++) {
                     System.out.println(request.currentUsers());
                 }
+                System.out.println("Completed Current Users Request");
                 break;
 
             // Running Processes
@@ -98,6 +103,7 @@ public class Main {
                 for(int i = 0; i < numOfRequests; i++) {
                     System.out.println(request.runningProcesses());
                 }
+                System.out.println("Completed Running Processes Request");
                 break;
 
             // Exit Program
