@@ -1,5 +1,6 @@
 import java.lang.Thread;
 import java.util.Scanner;
+import java.net.Socket;
 
 public class Client {
     public static void main(String[] args) throws InterruptedException {
@@ -24,6 +25,7 @@ public class Client {
         // Prompt for Port Number
         System.out.print("Please Enter Port: ");
         Integer port = in.nextInt();
+        Socket client = new Socket();
         System.out.println();
 
         // Prompt Server for Corresponding Request(s)
