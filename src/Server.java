@@ -20,7 +20,7 @@ public class Server {
         // 4. Send data to the client via the client's socket OutputStream
         OutputStream output = socket.getOutputStream();
         PrintWriter writer = new PrintWriter(output, true);
-        writer.println(results);
+        //writer.println(results);
 
         // 5. Close the connection with the client
         socket.close();
