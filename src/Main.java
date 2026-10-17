@@ -43,6 +43,11 @@ public class Main {
             case 7:
                 System.out.println(request.exitProgram());
                 break;
-        }
-    }
-}
+        } // end switch statement
+
+        System.out.println();
+        System.out.println("Enter Number of Commands");
+        Integer numOfCommands = in.nextInt();
+
+    } // end main method
+} // end main class
