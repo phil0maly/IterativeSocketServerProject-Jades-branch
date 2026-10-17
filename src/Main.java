@@ -6,7 +6,10 @@ public class Main {
 
         // Prompt for IP Address
         System.out.println("Please Enter IP Address: ");
+
         String ipAddress = in.nextLine();
+        // Check for proper IP address format via Regular Expression (REGEX)
+        // While loop Re-prompt if incorrect
         boolean valid = ipAddress.matches("((25[0-5]|2[0-4]\\d|1\\d{2}|[1-9]?\\d)\\.){3}" +
                 "(25[0-5]|2[0-4]\\d|1\\d{2}|[1-9]?\\d)");
         while(!valid){
