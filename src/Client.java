@@ -39,6 +39,7 @@ public class Client {
             System.out.println("5 - Current Users");
             System.out.println("6 - Running Process");
             System.out.println("7 - Exit Program");
+            System.out.println();
 
             requestSelection = in.nextInt();
             ClientCommand request = new ClientCommand(requestSelection);
