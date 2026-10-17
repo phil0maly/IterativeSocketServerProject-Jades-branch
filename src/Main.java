@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         Scanner in = new Scanner(System.in);
 
         // Prompt for IP Address
@@ -60,7 +60,8 @@ public class Main {
                 System.out.println(request.runningProcesses());
                 break;
             case 7:
-                System.out.println(request.exitProgram());
+                System.out.println("Exiting Program");
+                Thread.sleep(2000);
                 break;
         } // end switch statement
     } // end main method
