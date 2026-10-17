@@ -9,7 +9,7 @@ public class ClientCommand {
         this.request = request;
     }
     // Process builder Factory Method
-    protected ProcessBuilder sysCommand (String command) {
+    protected ProcessBuilder sysCommand (String... command) {
         return new ProcessBuilder(command);
     }
 
@@ -34,7 +34,7 @@ public class ClientCommand {
     }
 
     protected ProcessBuilder runningProcesses() {
-        return sysCommand("ps -ef");
+        return sysCommand("ps", "-ef");
     }
 
     protected ProcessBuilder exitProgram() {
