@@ -21,7 +21,8 @@ public class Main {
         ClientCommand request = new ClientCommand(requestSelection);
         ClientCommand returned;
 
-        System.out.println("Please Enter Number of Requests (1, 5, 10, 15, or 25");
+        System.out.println("Please Enter Number of Requests (1, 5, 10, 15, or 25)");
+        Integer numOfRequests = in.nextInt();
 
         switch (requestSelection) {
             case 1:
@@ -46,10 +47,5 @@ public class Main {
                 System.out.println(request.exitProgram());
                 break;
         } // end switch statement
-
-        System.out.println();
-        System.out.println("Enter Number of Commands");
-        Integer numOfCommands = in.nextInt();
-
     } // end main method
 } // end main class
