@@ -3,6 +3,8 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
+        System.out.println("Please Enter IP Address: ");
+        String ipAddress = in.nextLine();
         System.out.print("Please Enter Port: ");
         Integer port = in.nextInt();
         System.out.println();
@@ -19,7 +21,7 @@ public class Main {
         ClientCommand request = new ClientCommand(requestSelection);
         ClientCommand returned;
 
-        System.out.println("Please Enter Number of Requests");
+        System.out.println("Please Enter Number of Requests (1, 5, 10, 15, or 25");
 
         switch (requestSelection) {
             case 1:
