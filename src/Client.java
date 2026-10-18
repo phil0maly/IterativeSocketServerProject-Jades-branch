@@ -1,9 +1,13 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.lang.Thread;
 import java.util.Scanner;
 import java.net.Socket;
 
 public class Client {
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws InterruptedException, IOException {
         Scanner in = new Scanner(System.in);
 
         // Prompt for IP Address
@@ -11,7 +15,7 @@ public class Client {
         String ipAddress = in.nextLine();
         /*
         Check for proper IP address format via Regular Expression (REGEX)
-        While loop Re-prompt if incorrect
+        --While loop Re-prompt if incorrect
         */
         boolean valid = ipAddress.matches("((25[0-5]|2[0-4]\\d|1\\d{2}|[1-9]?\\d)\\.){3}" +
                 "(25[0-5]|2[0-4]\\d|1\\d{2}|[1-9]?\\d)");
@@ -25,7 +29,9 @@ public class Client {
         // Prompt for Port Number
         System.out.print("Please Enter Port: ");
         Integer port = in.nextInt();
-        Socket client = new Socket();
+        //Socket socket = new Socket(ipAddress, port);
+        //PrintWriter request = new PrintWriter(socket.getOutputStream(), true);
+        //BufferedReader response = new BufferedReader(new InputStreamReader(socket.getInputStream()));
         System.out.println();
 
         int requestSelection = 0;
@@ -42,7 +48,7 @@ public class Client {
             System.out.println();
 
             requestSelection = in.nextInt();
-            ClientCommand request = new ClientCommand(requestSelection);
+            ClientCommand req = new ClientCommand(requestSelection);
             ClientCommand returned;
 
                 int numOfRequests;
@@ -54,7 +60,7 @@ public class Client {
                         System.out.println("Options: 1, 5, 10, 15, 20, 25");
                         numOfRequests = in.nextInt();
                         for (int i = 0; i < numOfRequests; i++) {
-                            System.out.println(request.dateTime());
+                            System.out.println(req.dateTime());
                         }
                         System.out.println("Completed Date and Time Request");
                         break;
@@ -65,7 +71,7 @@ public class Client {
                         System.out.println("Options: 1, 5, 10, 15, 20, 25");
                         numOfRequests = in.nextInt();
                         for (int i = 0; i < numOfRequests; i++) {
-                            System.out.println(request.upTime());
+                            System.out.println(req.upTime());
                         }
                         System.out.println("Completed Uptime Request");
                         break;
@@ -76,7 +82,7 @@ public class Client {
                         System.out.println("Options: 1, 5, 10, 15, 20, 25");
                         numOfRequests = in.nextInt();
                         for (int i = 0; i < numOfRequests; i++) {
-                            System.out.println(request.memUse());
+                            System.out.println(req.memUse());
                         }
                         System.out.println("Completed Memory Use Request");
                         break;
@@ -87,7 +93,7 @@ public class Client {
                         System.out.println("Options: 1, 5, 10, 15, 20, 25");
                         numOfRequests = in.nextInt();
                         for (int i = 0; i < numOfRequests; i++) {
-                            System.out.println(request.netStat());
+                            System.out.println(req.netStat());
                         }
                         System.out.println("Completed Netstat Request");
                         break;
@@ -98,7 +104,7 @@ public class Client {
                         System.out.println("Options: 1, 5, 10, 15, 20, 25");
                         numOfRequests = in.nextInt();
                         for (int i = 0; i < numOfRequests; i++) {
-                            System.out.println(request.currentUsers());
+                            System.out.println(req.currentUsers());
                         }
                         System.out.println("Completed Current Users Request");
                         break;
@@ -109,7 +115,7 @@ public class Client {
                         System.out.println("Options: 1, 5, 10, 15, 20, 25");
                         numOfRequests = in.nextInt();
                         for (int i = 0; i < numOfRequests; i++) {
-                            System.out.println(request.runningProcesses());
+                            System.out.println(req.runningProcesses());
                         }
                         System.out.println("Completed Running Processes Request");
                         break;
