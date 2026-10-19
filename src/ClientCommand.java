@@ -70,7 +70,7 @@ public class ClientCommand {
                             System.out.println(response);
                         } // end while loop: reads each line of server response
                     } catch (IOException e) {
-                        System.out.println("Coonnection failed: " + e.getMessage());
+                        System.out.println("Connection failed: " + e.getMessage());
                     }
                 });
                 threads[i].start();
