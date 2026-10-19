@@ -49,11 +49,12 @@ public class ClientCommand {
     }
 
     protected void requestHandler(int requestSelection, int numOfRequests,
-                                  String ipAddress, int port) {
+                                  String ipAddress, int port) throws InterruptedException {
         if (numOfRequests == 1 || numOfRequests == 5 || numOfRequests == 10 ||
                 numOfRequests == 15 || numOfRequests == 20 || numOfRequests == 25) {
+            Thread[] threads = new Thread[numOfRequests];
             for(int i = 0; i < numOfRequests; i++) {
-                Thread thread = new Thread(() -> {
+                threads[i] = new Thread(() -> {
                     //Connect to server
                     try {
                         Socket socket = new Socket(ipAddress, port);
@@ -72,8 +73,11 @@ public class ClientCommand {
                         System.out.println("Coonnection failed: " + e.getMessage());
                     }
                 });
-                thread.start();
+                threads[i].start();
             }// end for loop
+            for (int i = 0; i < numOfRequests; i++) {
+                threads[i].join();
+            }
             System.out.println("Number of Requests initiated: " + numOfRequests);
         }
         else {
