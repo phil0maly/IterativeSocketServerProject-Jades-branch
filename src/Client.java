@@ -28,9 +28,6 @@ public class Client {
         // Prompt for Port Number
         System.out.print("Please Enter Port: ");
         Integer port = in.nextInt();
-        //Socket socket = new Socket(ipAddress, port);
-        //PrintWriter request = new PrintWriter(socket.getOutputStream(), true);
-        //BufferedReader response = new BufferedReader(new InputStreamReader(socket.getInputStream()));
         System.out.println();
 
         int requestSelection = 0;
