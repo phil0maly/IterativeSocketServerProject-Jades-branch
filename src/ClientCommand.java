@@ -1,4 +1,7 @@
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.time.LocalDateTime;
 import java.lang.ProcessBuilder;
 import java.lang.Thread;
@@ -45,7 +48,7 @@ public class ClientCommand {
         return sysCommand("exit");
     }
 
-    protected void requestHandler(Client req, int numOfRequests,
+    protected void requestHandler(ProcessBuilder req, int numOfRequests,
                                   String ipAddress, int port) {
         if (numOfRequests == 1 || numOfRequests == 5 || numOfRequests == 10 ||
                 numOfRequests == 15 || numOfRequests == 20 || numOfRequests == 25) {
@@ -53,19 +56,25 @@ public class ClientCommand {
                 Thread thread = new Thread(() -> {
                     //Connect to server
                     try {
-                        Socket socket = new Socket(String ipAddress, int port);
+                        Socket socket = new Socket(ipAddress, port);
+                        //Send request
+                        PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
+                        //Recieve response
+                        BufferedReader in = new BufferedReader(new InputStreamReader
+                                (socket.getInputStream()));
+                        String response = in.readLine();
+                        System.out.println(response);
                     } catch (IOException e) {
-                        // what should I put here?
+                        System.out.println("Coonnection failed: " + e.getMessage());
                     }
-                    //Send request
-                    //Recieve response
                 });
                 thread.start();
             }// end for loop
-        } else {
+        }
+        else {
             System.out.println("Invalid Selection");
             System.out.println("Select: 1, 5, 10, 15, 20, or 25");
-            } // end if/else
+        } // end if/else
 
     }//end requestHandler
 
