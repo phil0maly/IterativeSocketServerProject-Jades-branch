@@ -111,5 +111,5 @@ public class Client {
                         break;
                 } // end switch statement
         } // end while loop
-    }
-}
+    } // end Main method
+} // end Client class
