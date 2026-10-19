@@ -60,18 +60,21 @@ public class ClientCommand {
 
                         //Send request
                         PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
-
+                        out.println(requestSelection);
                         //Receive response
                         BufferedReader in = new BufferedReader(new InputStreamReader
                                 (socket.getInputStream()));
-                        String response = in.readLine();
-                        System.out.println(response);
+                        String response;
+                        while((response = in.readLine()) != null) {
+                            System.out.println(response);
+                        } // end while loop: reads each line of server response
                     } catch (IOException e) {
                         System.out.println("Coonnection failed: " + e.getMessage());
                     }
                 });
                 thread.start();
             }// end for loop
+            System.out.println("Number of Requests initiated: " + numOfRequests);
         }
         else {
             System.out.println("Invalid Selection");

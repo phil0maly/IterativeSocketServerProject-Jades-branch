@@ -57,7 +57,6 @@ public class Client {
                         numOfRequests = in.nextInt();
                         req.requestHandler(1, numOfRequests, ipAddress, port);
                         System.out.println("Selected 1: Date and Time");
-                        System.out.println("Number of requests to server: " + numOfRequests);
                         break;
 
                     // Uptime
@@ -67,7 +66,6 @@ public class Client {
                         numOfRequests = in.nextInt();
                         req.requestHandler(2, numOfRequests, ipAddress, port);
                         System.out.println("Selected 2: Up time");
-                        System.out.println("Number of requests to server: " + numOfRequests);
                         break;
 
                     // Memory Use
@@ -77,7 +75,6 @@ public class Client {
                         numOfRequests = in.nextInt();
                         req.requestHandler(3, numOfRequests, ipAddress, port);
                         System.out.println("Selected: 3: Memory Use");
-                        System.out.println("Number of requests to server: " + numOfRequests);
                         break;
 
                     // Netstat
@@ -87,7 +84,6 @@ public class Client {
                         numOfRequests = in.nextInt();
                         req.requestHandler(4, numOfRequests, ipAddress, port);
                         System.out.println("Selected 4: Netstat");
-                        System.out.println("Number of requests to server: " + numOfRequests);
                         break;
 
                     // Current Users
@@ -97,7 +93,6 @@ public class Client {
                         numOfRequests = in.nextInt();
                         req.requestHandler(5, numOfRequests, ipAddress, port);
                         System.out.println("Selected 5: Current Users");
-                        System.out.println("Number of requests to server: " + numOfRequests);
                         break;
 
                     // Running Processes
@@ -107,7 +102,6 @@ public class Client {
                         numOfRequests = in.nextInt();
                         req.requestHandler(6, numOfRequests, ipAddress, port);
                         System.out.println("Selected 6: Running Processes");
-                        System.out.println("Number of requests to server: " + numOfRequests);
                         break;
 
                     // Exit Program
