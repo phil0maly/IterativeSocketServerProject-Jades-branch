@@ -43,7 +43,7 @@ public class Client {
             System.out.println("7 - Exit Program");
             System.out.println();
 
-            int commandNumber = in.nextInt();
+            requestSelection = in.nextInt();
             ClientCommand req = new ClientCommand(requestSelection);
             //ClientCommand returned;
 

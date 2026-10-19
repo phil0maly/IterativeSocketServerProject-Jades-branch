@@ -48,7 +48,7 @@ public class ClientCommand {
         return sysCommand("exit");
     }
 
-    protected void requestHandler(int commandNumber, int numOfRequests,
+    protected void requestHandler(int requestSelection, int numOfRequests,
                                   String ipAddress, int port) {
         if (numOfRequests == 1 || numOfRequests == 5 || numOfRequests == 10 ||
                 numOfRequests == 15 || numOfRequests == 20 || numOfRequests == 25) {
@@ -61,7 +61,7 @@ public class ClientCommand {
                         //Send request
                         PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
 
-                        //Recieve response
+                        //Receive response
                         BufferedReader in = new BufferedReader(new InputStreamReader
                                 (socket.getInputStream()));
                         String response = in.readLine();
