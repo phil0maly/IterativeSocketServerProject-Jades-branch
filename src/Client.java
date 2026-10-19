@@ -45,7 +45,6 @@ public class Client {
 
             requestSelection = in.nextInt();
             ClientCommand req = new ClientCommand(requestSelection);
-            //ClientCommand returned;
 
                 int numOfRequests;
                 switch (requestSelection) {
