@@ -44,6 +44,7 @@ public class Server {
                     throw new IllegalArgumentException("Invalid Command");
             } // end Switch statement
             Process runningProcess = process.start();
+
             String response;
             BufferedReader responseReader = new BufferedReader(
                     new InputStreamReader(runningProcess.getInputStream())
