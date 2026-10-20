@@ -57,7 +57,7 @@ public class ClientCommand {
             long[] threadTimes = new long[threads.length]; //array for storing thread times
             for(int i = 0; i < numOfRequests; i++) {
                 final int threadIndex = i;  // preserves this thread's array index
-                //lambda expression
+                //lambda expression added as argument
                 threads[i] = new Thread(() -> {
                     //Connect to server
                     try {
