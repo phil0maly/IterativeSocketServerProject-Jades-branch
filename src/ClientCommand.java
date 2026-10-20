@@ -2,7 +2,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
-import java.time.LocalDateTime;
+import java.lang.System;
 import java.lang.ProcessBuilder;
 import java.lang.Thread;
 import java.net.Socket;
@@ -52,8 +52,10 @@ public class ClientCommand {
                                   String ipAddress, int port) throws InterruptedException {
         if (numOfRequests == 1 || numOfRequests == 5 || numOfRequests == 10 ||
                 numOfRequests == 15 || numOfRequests == 20 || numOfRequests == 25) {
-            Thread[] threads = new Thread[numOfRequests];
+            Thread[] threads = new Thread[numOfRequests]; //array for threads
+            long[] threadTimes = new long[threads.length]; //array for storing thread times
             for(int i = 0; i < numOfRequests; i++) {
+                final int threadIndex = i;  // captures current loop index for instantaneous/current thread
                 threads[i] = new Thread(() -> {
                     //Connect to server
                     try {
@@ -61,14 +63,18 @@ public class ClientCommand {
 
                         //Send request
                         PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
-                        out.println(requestSelection);
-                        //Receive response
+                        long startTime = System.nanoTime(); //start timer for individual thread request
+                        out.println(requestSelection);  //send request
+
+                        //Receive response from server
                         BufferedReader in = new BufferedReader(new InputStreamReader
                                 (socket.getInputStream()));
                         String response;
                         while((response = in.readLine()) != null) {
                             System.out.println(response);
                         } // end while loop: reads each line of server response
+                        long endTime = System.nanoTime(); // end timer for response from server
+
                     } catch (IOException e) {
                         System.out.println("Connection failed: " + e.getMessage());
                     }
@@ -78,7 +84,10 @@ public class ClientCommand {
             for (int i = 0; i < numOfRequests; i++) {
                 threads[i].join();
             }
+            long endTime = System.nanoTime();
             System.out.println("Number of Requests initiated: " + numOfRequests);
+            // System.out.println("Total Elapsed Time: " + elapsedTime);
+            System.out.println();
         }
         else {
             System.out.println("Invalid Selection");

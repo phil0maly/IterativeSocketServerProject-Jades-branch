@@ -107,6 +107,7 @@ public class Client {
                     case 7:
                         System.out.println("Exiting Program");
                         req.exitProgram();
+                        in.close();
                         Thread.sleep(2000);
                         break;
                 } // end switch statement
