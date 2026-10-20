@@ -16,39 +16,39 @@ public class ClientCommand {
     }
 
     // Process builder Factory Method
-    protected ProcessBuilder sysCommand (String... command) {
+    public ProcessBuilder sysCommand (String... command) {
         return new ProcessBuilder(command);
     }
 
-    protected ProcessBuilder dateTime() {
+    public ProcessBuilder dateTime() {
         return sysCommand("date");
     }
 
-    protected ProcessBuilder upTime() {
+    public ProcessBuilder upTime() {
         return sysCommand("uptime");
     }
 
-    protected ProcessBuilder memUse() {
+    public ProcessBuilder memUse() {
         return sysCommand("free");
     }
 
-    protected ProcessBuilder netStat() {
+    public ProcessBuilder netStat() {
         return sysCommand("netstat");
     }
 
-    protected ProcessBuilder currentUsers() {
+    public ProcessBuilder currentUsers() {
         return sysCommand("who");
     }
 
-    protected ProcessBuilder runningProcesses() {
+    public ProcessBuilder runningProcesses() {
         return sysCommand("ps", "-ef");
     }
 
-    protected ProcessBuilder exitProgram() {
+    public ProcessBuilder exitProgram() {
         return sysCommand("exit");
     }
 
-    protected void requestHandler(int requestSelection, int numOfRequests,
+    public void requestHandler(int requestSelection, int numOfRequests,
                                   String ipAddress, int port) throws InterruptedException {
         //Ensure proper test points are entered
         if (numOfRequests == 1 || numOfRequests == 5 || numOfRequests == 10 ||
