@@ -1,12 +1,14 @@
 import java.io.*;
 import java.net.*;
+import java.util.Scanner;
 
 public class Server {
     public static void main(String[] args) throws InterruptedException, IOException {
-
+        Scanner in = new Scanner(System.in);
         // 1. Create a socket and bind to a port number
-        String ipAddress = "192.168.1.46";
-        int port = 2525;
+        //String ipAddress = "192.168.1.46";
+        System.out.println("Please Enter Port: ");
+        int port = in.nextInt();
         ServerSocket serverSocket = new ServerSocket(port, 25);
         while(true) {
 
