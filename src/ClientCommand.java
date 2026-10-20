@@ -106,8 +106,9 @@ public class ClientCommand {
             System.out.println();
         }
         else {
-            System.out.println("Invalid Selection");
+            System.out.println("Invalid number of requests selected.");
             System.out.println("Select: 1, 5, 10, 15, 20, or 25");
+            System.out.println();
         } // end if/else
 
     }//end requestHandler

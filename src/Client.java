@@ -54,8 +54,8 @@ public class Client {
                         System.out.println("Please enter Number of Requests");
                         System.out.println("Options: 1, 5, 10, 15, 20, 25");
                         numOfRequests = in.nextInt();
-                        req.requestHandler(1, numOfRequests, ipAddress, port);
                         System.out.println("Selected 1: Date and Time");
+                        req.requestHandler(1, numOfRequests, ipAddress, port);
                         break;
 
                     // Uptime
@@ -63,8 +63,8 @@ public class Client {
                         System.out.println("Please enter Number of Requests");
                         System.out.println("Options: 1, 5, 10, 15, 20, 25");
                         numOfRequests = in.nextInt();
-                        req.requestHandler(2, numOfRequests, ipAddress, port);
                         System.out.println("Selected 2: Up time");
+                        req.requestHandler(2, numOfRequests, ipAddress, port);
                         break;
 
                     // Memory Use
@@ -72,8 +72,8 @@ public class Client {
                         System.out.println("Please enter Number of Requests");
                         System.out.println("Options: 1, 5, 10, 15, 20, 25");
                         numOfRequests = in.nextInt();
-                        req.requestHandler(3, numOfRequests, ipAddress, port);
                         System.out.println("Selected: 3: Memory Use");
+                        req.requestHandler(3, numOfRequests, ipAddress, port);
                         break;
 
                     // Netstat
@@ -81,8 +81,8 @@ public class Client {
                         System.out.println("Please enter Number of Requests");
                         System.out.println("Options: 1, 5, 10, 15, 20, 25");
                         numOfRequests = in.nextInt();
-                        req.requestHandler(4, numOfRequests, ipAddress, port);
                         System.out.println("Selected 4: Netstat");
+                        req.requestHandler(4, numOfRequests, ipAddress, port);
                         break;
 
                     // Current Users
@@ -90,8 +90,8 @@ public class Client {
                         System.out.println("Please enter Number of Requests");
                         System.out.println("Options: 1, 5, 10, 15, 20, 25");
                         numOfRequests = in.nextInt();
-                        req.requestHandler(5, numOfRequests, ipAddress, port);
                         System.out.println("Selected 5: Current Users");
+                        req.requestHandler(5, numOfRequests, ipAddress, port);
                         break;
 
                     // Running Processes
@@ -99,8 +99,8 @@ public class Client {
                         System.out.println("Please enter Number of Requests");
                         System.out.println("Options: 1, 5, 10, 15, 20, 25");
                         numOfRequests = in.nextInt();
-                        req.requestHandler(6, numOfRequests, ipAddress, port);
                         System.out.println("Selected 6: Running Processes");
+                        req.requestHandler(6, numOfRequests, ipAddress, port);
                         break;
 
                     // Exit Program
